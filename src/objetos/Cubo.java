@@ -1,17 +1,19 @@
 package objetos;
 
-public class Cubo extends Cuadrado{
-	
-	float volumen = 0;
+public class Cubo extends Cuadrado{	
 	
 	public Cubo(float side) {
 		super(side);
-		volumen = calcularVolumen();
 	}
 	
 	@Override
 	public float calcularPerimetro() {
 		return lado * 6;
+	}
+	
+	@Override
+	public float calcularArea() {
+		return super.calcularArea() * 6;
 	}
 	
 	public float calcularVolumen() {
