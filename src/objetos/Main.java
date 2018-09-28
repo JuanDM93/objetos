@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 	
+	// Main scanner
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {		
 		boolean flag = true;
 		
+		// First menu
 		while (flag) {
 			int input = 0;
 			System.out.println("Ingresar longitud de lado o '-1' para salir: ");
@@ -16,7 +18,7 @@ public class Main {
 			try {
 				input = Integer.parseInt(scan.nextLine());
 				if (input > 0) {					
-					printMenu(input);
+					printMenu(input);	// Second menu
 				}else {
 					flag = false;
 				}
@@ -29,11 +31,15 @@ public class Main {
 	}
 	
 	static void printMenu(int side) {
-		
+		/*
+		 Second menu
+		 */
 		Cuadrado cuadro = new Cuadrado(side);
 		Cubo cubo = new Cubo(side);
-		
 		boolean flag = true;
+		
+
+		// Menu start
 		while (flag) {
 			System.out.println("Elegiste: " + side);
 			System.out.println("Ingresa 'perimetro', 'area', 'volumen' o 'salir':");
@@ -47,6 +53,7 @@ public class Main {
 			}
 			System.out.println();			
 			
+			// Option cases
 			switch (input) {
 			case "perimetro":
 				System.out.println("El perimetro del cuadrado es: " + cuadro.calcularPerimetro());
